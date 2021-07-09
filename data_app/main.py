@@ -1,7 +1,9 @@
-from flask import Blueprint, render_template, request, session, redirect, url_for
+## THIS FILE CONTAINS ALL THE MAIN ROUTES
+#  We can change the routes and the functionality here
+
+from flask import Blueprint, render_template, request, redirect, url_for
 
 main = Blueprint('main', __name__)
-
 
 @main.route('/')
 def index():

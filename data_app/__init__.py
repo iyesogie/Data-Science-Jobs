@@ -1,10 +1,13 @@
+## THIS FILE INITIALIZES THE WEB APPLICATION.
+#  We shouldn't need to edit it often, except to add database connection
+
 import os
 from flask import Flask, render_template, request
 
 # Create the app
 def create_app(test_config=None):
 
-    # Create the App
+    # Create the App - It will be named whatever the parent folder is named
     app = Flask(__name__, static_url_path='', template_folder='templates')
 
     # Configure either from file or from test options
