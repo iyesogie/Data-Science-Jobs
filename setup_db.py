@@ -4,10 +4,12 @@
 ## MODIFICATIONS MADE BY:
 # Andrew Anastasiades | @andrew-ana
 
-# import dependencies
+# import 3rd party dependencies
 import pandas as pd
 from sqlalchemy import create_engine
 import psycopg2 as lily
+# import DB config variables
+from db_config import *
 
 # Required Files
 alldata = "Resources/alldata(clean).csv"
@@ -19,7 +21,7 @@ datascientist_df = pd.read_csv(datascientist)
 
 #connect to database
 def execute_sql_statement(sqltext):
-    conn=lily.connect( host="localhost", database="data_science_careers", user="postgres", password="pythondata")
+    conn=lily.connect( host="localhost", database=DB_NAME, user=SQL_USERNAME, password=SQL_PASSWORD)
 #cursor is an object to put watever you want
     cursor=conn.cursor()
 #xecute() method
@@ -90,7 +92,7 @@ print("Table created successfully........")
 
 #Insert Data
 #Create Engine and connection to Database
-engine = create_engine('postgresql://postgres:pythondata@localhost:5432/data_science_careers')
+engine = create_engine(f'postgresql://{SQL_USERNAME}:{SQL_PASSWORD}@localhost:{LOCAL_PORT}/{DB_NAME}')
 
 
 alldata_df.to_sql("all_data_df",engine,if_exists="replace")
