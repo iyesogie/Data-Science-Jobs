@@ -25,6 +25,10 @@ export FLASK_APP=data_app
 flask run
 ```
 
+Once you have run the commands, your terminal will tell you which port the application is hosted on and you can view application by navigating to:  
+localhost:5000/home  
+(where 5000 is the port supplied by your terminal)
+
 If you are on a network you trust you can host the application to other devices on that network with 
 
 ```bash
