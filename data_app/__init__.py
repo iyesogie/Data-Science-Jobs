@@ -3,6 +3,9 @@
 
 import os
 from flask import Flask, render_template, request
+from flask_sqlalchemy import SQLAlchemy
+
+db = SQLAlchemy()
 
 # Create the app
 def create_app(test_config=None):
@@ -19,14 +22,14 @@ def create_app(test_config=None):
         app.config.from_mapping(test_config)
     
     # Initialize DataBase Connection
-
+    db.init_app(app)
     # ensure the instance folder exists
     try:
         os.makedirs(app.instance_path)
     except OSError:
         pass
     
-    # blueprint for non-auth parts of app
+    # blueprint for main parts of app
     from .main import main as main_blueprint
     app.register_blueprint(main_blueprint)
 

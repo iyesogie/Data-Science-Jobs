@@ -2,6 +2,7 @@
 #  We can change the routes and the functionality here
 
 from flask import Blueprint, render_template, request, redirect, url_for
+from . import db
 
 main = Blueprint('main', __name__)
 
