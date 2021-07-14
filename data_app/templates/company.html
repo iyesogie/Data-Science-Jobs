@@ -1,0 +1,15 @@
+{% extends 'index.html' %}
+
+{% block load_data %}
+<script>
+    var datascientists = {{ data.datascientists|tojson }};
+    var companies = {{ data.companies|tojson }};
+</script>
+{% endblock %}
+
+{% block main_content %}
+<div>
+    This is the company page!
+</div>
+
+{% endblock %}

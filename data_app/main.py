@@ -13,11 +13,32 @@ def index():
 
 @main.route('/home')
 def home():
-    locs = Location.query.order_by(Location.name).all()
-    for location in locs:
-        print(location.name)
     return render_template('home.html')
 
 @main.route('/about')
 def about():
     return render_template('about.html')
+
+@main.route('/company')
+def company():
+    ds_list = list(Datascientist.query.all())
+    ds = [{
+        "rating" : row.rating,
+        "salary_estimate" : row.salary_estimate,
+        "companyid" : row.companyid,
+        "industryid": row.industryid
+    } for row in ds_list]
+
+    print(ds)
+    comps_list = list(Company.query.all())
+    comps = [{
+        "id" : row.id,
+        "name" : row.name
+    } for row in comps_list]
+    
+    data = {
+        'datascientists' : ds,
+        'companies' : comps
+    }
+    return render_template('company.html', data=data)
+

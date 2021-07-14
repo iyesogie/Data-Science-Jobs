@@ -7,9 +7,9 @@
     <title>Data Jobs</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu">
     <link rel="stylesheet" href="/css/sandstone_bootstrap.min.css">
-    <script>
+    {% block load_data %}
+    {% endblock %}
 
-    </script>
 </head>
 
 <body>
@@ -33,6 +33,11 @@
                     <span class="visually-hidden">(current)</span>
                 </a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="{{ url_for('main.company') }}">COMPANY
+                        <span class="visually-hidden">(current)</span>
+                    </a>
+                    </li>
             </ul>
         </nav>
     
