@@ -28,8 +28,6 @@ def company():
         "companyid" : row.companyid,
         "industryid": row.industryid
     } for row in ds_list]
-
-    print(ds)
     comps_list = list(Company.query.all())
     comps = [{
         "id" : row.id,
@@ -42,3 +40,18 @@ def company():
     }
     return render_template('company.html', data=data)
 
+@main.route('/map')
+def map():
+    data=dict()
+    ds_list = list(Datascientist_df.query.all())
+    locations = [{
+        "company" : row.Company,
+        "rating" : row.Rating,
+        "location" : row.Location,
+        "position" : row.Position
+    } for row in ds_list]
+    data["locations"] = locations
+    return render_template('map.html', data=data)
+
+# company, rating, location, position
+# additional json

@@ -1,0 +1,14 @@
+{% extends 'index.html' %}
+
+{% block load_data %}
+<script>
+    var locations = {{ data.locations|tojson }};
+</script>
+{% endblock %}
+
+{% block main_content %}
+<div>
+    This is where the maps will go!
+</div>
+
+{% endblock %}
