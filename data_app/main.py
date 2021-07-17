@@ -21,12 +21,12 @@ def about():
 
 @main.route('/company')
 def company():
-    ds_list = list(Datascientist.query.all())
+    ds_list = list(Datascientist_df.query.all())
     ds = [{
         "rating" : row.rating,
         "salary_estimate" : row.salary_estimate,
-        "companyid" : row.companyid,
-        "industryid": row.industryid
+        "company" : row.Company,
+        "industry": row.Industry
     } for row in ds_list]
     comps_list = list(Company.query.all())
     comps = [{
