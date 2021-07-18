@@ -46,9 +46,9 @@
             var expression = new RegExp(search, 'i');
             var output;
                 $.each(datascientists, function (key, val) {
-                    if (val.industry.search(expression) != -1 || val.company.search(expression) != -1) {
+                    if (val.industry.search(expression) != -1 || val.company.search(expression) != -1 || val.position.search(expression) != -1) {
                         {
-                            $('#result').append('<li class="list-group-item link-class"> <span class="font-weight-bold">' + val.company.slice(0, -3) + '</span> | <span class="text-primary">' + val.rating + '</span> | <span class="text-success">' + val.salary_estimate.slice(0, -16) + '</span> | <span class="text-muted">' +val.location+ ' </span></li>');
+                            $('#result').append('<li class="list-group-item link-class">  '+val.position+' | ' + val.company.slice(0, -3) + '| <span class="text-primary">' + val.rating + '</span> | <span class="text-success">' + val.salary_estimate.slice(0, -16) + '</span> | <span class="text-muted">' +val.location+ ' </span></li>');
                         }
 
                     }

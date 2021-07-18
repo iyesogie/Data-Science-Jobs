@@ -31,7 +31,8 @@ def company():
         "salary_estimate" : row.salary_estimate,
         "company": row.Company,
         "industry": row.Industry,
-        'location':row.Location
+        'location':row.Location,
+        'position':row.Position
     } for row in ds_list]
     comps_list = list(Company.query.all())
     comps = [{"id": row.id,
