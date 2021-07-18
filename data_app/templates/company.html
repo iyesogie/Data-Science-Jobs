@@ -2,14 +2,66 @@
 
 {% block load_data %}
 <script>
-    var datascientists = {{ data.datascientists|tojson }};
-    var companies = {{ data.companies|tojson }};
+    var datascientists = {{ data.datascientists| tojson }};
+    var companies = {{ data.companies| tojson }};
 </script>
 {% endblock %}
 
-{% block main_content %}
-<div>
-    This is the company page!
-</div>
+{% block search_bar %}
 
+<body>
+    <br /><br />
+    <div class="container" style="width:900px;">
+        <h2 align="center">Data Scientists Companies</h2>
+        <h3 align="center">Salary and Rating</h3>
+        <br /><br />
+        <div align="center">
+            <input type="text" name="search" id="search" placeholder="Search Company Details" class="form-control" />
+        </div>
+        <ul class="list-group" id="result"></ul>
+        <br />
+    </div>
+</body>
 {% endblock %}
+
+{% block load_js_files %}
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js"
+    integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js"></script>
+
+<script>
+
+    //linking json files to work with search bar using ajax jquery
+    $(document).ready(function () {
+        $.ajaxSetup({ cache: false });
+        $('#search').keyup(function () {
+            $('#result').html('');
+            var search = $('#search').val();
+            var expression = new RegExp(search, 'i');
+            var output;
+                $.each(datascientists, function (key, val) {
+                    if (val.industry.search(expression) != -1 || val.company.search(expression) != -1 || val.position.search(expression) != -1) {
+                        {
+                            $('#result').append('<li class="list-group-item link-class">  '+val.position+' | ' + val.company.slice(0, -3) + '| <span class="text-primary">' + val.rating + '</span> | <span class="text-success">' + val.salary_estimate.slice(0, -16) + '</span> | <span class="text-muted">' +val.location+ ' </span></li>');
+                        }
+
+                    }
+                });
+        });
+
+        $('li').bind('click',  function(e) {
+            var click_text = $(this).text().split('|');
+            $('#search').val($.trim(click_text[0]));
+            $("#result").html('');
+        });
+    });
+</script>
+{% endblock %}
+
+</html>
