@@ -61,11 +61,11 @@ def map():
 def size():
     data=dict()
     ds_list = list(Datascientist_df.query.all())
-    locations = [{
+    companies = [{
         "company" : row.Company,
         "industry" : row.Industry,
     } for row in ds_list]
-    data["locations"] = locations
+    data["companies"] = companies
     return render_template('size.html', data=data)
 # company, rating, location, position
 # additional json
