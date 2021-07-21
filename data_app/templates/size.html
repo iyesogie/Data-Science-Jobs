@@ -1,0 +1,17 @@
+{% extends 'index.html' %}
+
+{% block load_data %}
+<script>
+    var companies = {{ data.companies|tojson }};
+</script>
+{% endblock %}
+
+{% block main_content %}
+<div>
+    This is the size page!
+</div>
+{% endblock %}
+
+{% block load_js_files %}
+<script src="/js/size.js"></script>
+{% endblock %}
