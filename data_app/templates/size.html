@@ -2,7 +2,7 @@
 
 {% block load_data %}
 <script>
-
+var companies = {{ data.companies|tojson }}
 </script>
 {% endblock %}
 
@@ -10,4 +10,8 @@
 <div>
     This is the size page!
 </div>
+{% endblock %}
+
+{% block load_data_files %}
+<script src="/js/size.js"></script>
 {% endblock %}

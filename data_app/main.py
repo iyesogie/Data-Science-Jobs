@@ -65,7 +65,7 @@ def size():
         "company" : row.Company,
         "industry" : row.Industry,
     } for row in ds_list]
-    data["locations"] = locations
+    data["companies"] = locations
     return render_template('size.html', data=data)
 # company, rating, location, position
 # additional json
