@@ -1,6 +1,4 @@
-
-
-
+// load js file to JSON.
 
       //Get latitude and longitude from cities.json data  
       var cities=[]

@@ -42,16 +42,18 @@ def company():
 
 @main.route('/map')
 def map():
-    data = dict()
+    data=dict()
+    data["page_name"] = "Job Map"
     ds_list = list(Datascientist_df.query.all())
     locations = [{
-        "company": row.Company,
-        "rating": row.Rating,
-        "location": row.Location,
-        "position": row.Position
+        "company" : row.Company,
+        "rating" : row.Rating,
+        "location" : row.Location,
+        "position" : row.Position,
+        "salary":row.salary_estimate,
     } for row in ds_list]
     data["locations"] = locations
-    return render_template('map.html', data=data)
+    return render_template('map.html',data=data)
 
 @main.route('/size')
 def size():
