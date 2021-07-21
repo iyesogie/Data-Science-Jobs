@@ -12,19 +12,16 @@ main = Blueprint('main', __name__)
 def index():
     return redirect(url_for('main.home'))
 
-
 @main.route('/home')
 def home():
+    data = dict()
+    data["page_name"] = "Home"
     return render_template('home.html')
-
-
-@main.route('/about')
-def about():
-    return render_template('about.html')
-
 
 @main.route('/company')
 def company():
+    data = dict()
+    data["page_name"] = "Job seach"
     ds_list = list(Datascientist_df.query.all())
     ds = [{
         "rating": str(row.Rating),
@@ -38,9 +35,8 @@ def company():
     comps = [{"id": row.id,
               "name": row.name
               } for row in comps_list]
-    data = {'datascientists': ds,
-            'companies': comps
-            }
+    data['datascientists'] = ds
+    data['companies'] = comps
     return render_template('company.html', data=data)
 
 
@@ -60,6 +56,7 @@ def map():
 @main.route('/size')
 def size():
     data=dict()
+    data["page_name"] = "Industry Analysis"
     ds_list = list(Datascientist_df.query.all())
     companies = [{
         "company" : row.Company,

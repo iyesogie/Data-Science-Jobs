@@ -64,26 +64,25 @@
   </header><!-- End Header -->
 
   <main id="main" data-aos="fade-up">
-
     <!-- ======= Breadcrumbs ======= -->
     <section class="breadcrumbs">
       <div class="container">
         {% block SubHeader %}
         <div>
           <div class="d-flex justify-content-between align-items-center">
-            <h2>Inner Page</h2>
+            <h2>{{ data.page_name }}</h2>
             <ol>
               <li><a href="index.html">Home</a></li>
-              <li>Inner Page</li>
+              <li>{{ data.page_name }}</li>
             </ol>
           </div>
         </div>
         {% endblock %}
 
       </div>
-    </section><!-- End Breadcrumbs -->
+    </section>
+    <!-- End Breadcrumbs -->
     {% block search_bar %}
-    
     {% endblock %}
 
 
