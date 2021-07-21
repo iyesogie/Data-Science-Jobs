@@ -69,3 +69,9 @@ def size():
     return render_template('size.html', data=data)
 # company, rating, location, position
 # additional json
+
+@main.route('/RatingVsSalary')
+def rating():
+    data=dict()
+    data["page_name"] = "Rating vs. Salary"
+    return render_template('rating_and_salary.html', data=data)
