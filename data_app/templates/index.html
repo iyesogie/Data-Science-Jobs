@@ -50,7 +50,7 @@
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="nav-link scrollto active" href="{{ url_for('main.home') }}">Home</a></li>
+          <li><a class="nav-link scrollto" href="{{ url_for('main.home') }}">Home</a></li>
           <li><a class="nav-link scrollto" href="{{ url_for('main.rating') }}">Data Scientist Salary vs. Rating in America<Industry Offerings</a></li>
           <li><a class="nav-link scrollto " href="{{ url_for('main.company') }}">Job Search</a></li>
           <li><a class="nav-link scrollto" href="{{ url_for('main.map') }}">Job Map</a></li>
@@ -86,18 +86,12 @@
 
 
     {% block main_content %}
-    <div>
-        This is where we will put elements for each page. This will be overwritten by the template
-    </div>
     {% endblock %}
 
   </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
-
-
-
-
+  <footer>
     <div class="container py-4">
       <div class="copyright">
         &copy; Copyright <strong><span>BizLand</span></strong>. All Rights Reserved
@@ -110,7 +104,7 @@
         Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
       </div>
     </div>
-  </footer><!-- End Footer -->
+  </footer>
 
   <div id="preloader"></div>
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
@@ -129,7 +123,6 @@
   <script src="assets/js/main.js"></script>
 
   {% block load_js_files %}
-  
   {% endblock %}
 
 </body>
