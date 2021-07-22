@@ -27,11 +27,11 @@
           <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
             <div class="member">
               <div class="member-img">
-                <img src="https://raw.githubusercontent.com/iyesogie/Project-2/main/images/IMG_8161.jpg" class="img-fluid" alt="">
+                <img src="https://raw.githubusercontent.com/iyesogie/Project-2/main/images/IMG_8161.jpg" class="img-fluid" alt=">
               </div>
               <div class="member-info">
                 <h4>Iyesogie Obakpolor</h4>
-                <span>Data Analyst with a Bachelors in Political Science from Alabama State University and a Post Graduate Certificate in Data Analytics from Georgia Tech.</span>
+                <span>Data Analyst with a Bachelors in Political Science from Alabama State University and a Post Graduate Certificate in Data Analytics from Georgia Tech.I have spent the last 4 years working in education teaching Math, English Language Arts and Social Studies.</span>
               </div>
             </div>
           </div>
@@ -39,11 +39,11 @@
           <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
             <div class="member">
               <div class="member-img">
-                <img src="insert pic url" class="img-fluid" alt="">
+                <img src="https://raw.githubusercontent.com/iyesogie/Project-2/main/images/Headshot.JPG" class="img-fluid" alt="">
               </div>
               <div class="member-info">
                 <h4>Andrew Anastasiades</h4>
-                <span>insert Bio</span>
+                <span>Director of Business Intelligence at Atlanta Eye Group, I specialize in operational data applications and business analytics. Recently, my work has focused on developing systems to maximize efficiency and profitability without compromising high quality Healthcare services.</span>
               </div>
             </div>
           </div>
@@ -51,11 +51,11 @@
           <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
             <div class="member">
               <div class="member-img">
-                <img src="insert pic url"" class="img-fluid" alt="">
+                <img src="https://raw.githubusercontent.com/iyesogie/Project-2/main/images/IMG_8851.jpg" class="img-fluid" alt="">
               </div>
               <div class="member-info">
                 <h4>Jane Kim</h4>
-                <span>insert Bio</span>
+                <span>Student at Georgia State University graduating in 2022. I’m taking this year off to learn and broaden my knowledge to become a better Data Analyst, soon graduating with a Data Science Certificate from Georgia Tech.</span>
               </div>
             </div>
           </div>
@@ -79,7 +79,7 @@
                 </div>
               <div class="member-info">
                 <h4>Nnamdi Obodoechine </h4>
-                <span>insert Bio</span>
+                <span>Technology Consultant at EY with a background in Economics, Management, Data Analytics and ERP Systems. Skilled in Excel, VBA, Python, SQL, Databases, SAP, Modeling, Predictive Analytics, Data Visualization.  Insatiable intellectual curiosity and ability to mine hidden gems located within large sets of structured, semi-structured, and raw data. Enjoys leveraging background and skill set to support detailed and efficient analysis.</span>
               </div>
             </div>
           </div>
@@ -103,16 +103,8 @@
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
             <div class="icon-box">
               <div class="icon"><i class="bx bxl-dribbble"></i></div>
-              <h4><a href="">Location and Salary</a></h4>
+              <h4><a href="{{ url_for('main.map') }}">Location and Salary</a></h4>
               <p>What is the relationship between Location and Salary?</p>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
-            <div class="icon-box">
-              <div class="icon"><i class="bx bx-file"></i></div>
-              <h4><a href="{{ url_for('main.company') }}">Salary and Company Rating</a></h4>
-              <p>What is the relationship between Salary and Company Rating?</p>
             </div>
           </div>
 
@@ -127,16 +119,26 @@
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="100">
             <div class="icon-box">
               <div class="icon"><i class="bx bx-world"></i></div>
-              <h4><a href=""> Experience Level and Location</a></h4>
-              <p>What is the relationship between Experience Level and Location?</p>
+              <h4><a href="{{ url_for('main.size') }}"> Industry and Jop Postings</a></h4>
+              <p>What is the relationship  between Industry and Jop Postings?</p>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="200">
             <div class="icon-box">
               <div class="icon"><i class="bx bx-slideshow"></i></div>
-              <h4><a href="">Experience Level and Salary</a></h4>
-              <p>What is the relationship  between Experience Level and Salary?</p>
+              <h4><a href="{{ url_for('main.rating') }}">Company Ratings and Salary?</a></h4>
+              <p>What is the relationship  between Company Ratings and Salary?</p>
+            </div>
+ 
+
+            <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="300">
+              <div class="icon-box">
+                <div class="icon"><i class="bx bx-file"></i></div>
+                <h4><a href="{{ url_for('main.company') }}">Availables <span>Jobs</span> </a></h4>
+                <p>Take a look at whats out there !!</p>
+              </div>
+
             </div>
           </div>
 

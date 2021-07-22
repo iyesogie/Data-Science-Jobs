@@ -8,10 +8,11 @@
 
 {% block main_content %}
 <div>
-    This is the size page!
+    <div id="pie"></div>
 </div>
 {% endblock %}
 
 {% block load_js_files %}
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 <script src="/js/size.js"></script>
 {% endblock %}
