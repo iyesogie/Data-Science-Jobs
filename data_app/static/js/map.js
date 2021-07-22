@@ -1,4 +1,4 @@
-// load js file to JSON.
+
 
       //Get latitude and longitude from cities.json data  
       var cities=[]
@@ -100,7 +100,9 @@
         });
       // create layer control
         L.control.layers(baseMaps).addTo(myMap);
-      // Add city circle marker to myMap
+            
+      
+          // Add city circle marker to myMap
       var citymarker=[];
       var color="";
       for (q=0;q<uniquecity.length;q++){
@@ -123,90 +125,18 @@
               weight:1
             }).bindPopup(result[q].city+"<hr>Data Company Number: "+dic2[q].count+"<br>Average Data Company Rating: "+ Math.round(result[q].rating/dic2[q].count)+"<br>Average Data Job Salary: $"+Math.round(salaryresult[q].salary/dic2[q].count)+"K"))
           }
-        L.layerGroup(citymarker).addTo(myMap);        
-      // Add engineer marker
-      var engineerlatitude=[];
-      var engineerlongitude=[];
-      var engineercity=[];
-      for (n=0;n<data.length;n++){
-        for (o=0;o<codata.length;o++){
-          if (data[n].location.split(",")[0]===codata[o].city&&data[n].location.split(",")[1].charAt(1)===codata[o].state.charAt(0)&&data[n].position.includes("Engineer")){
-                 engineerlatitude.push(codata[o].latitude)
-                 engineerlongitude.push(codata[o].longitude)
-                 engineercity.push(data[n].location)
-                  }}}
-      var engineermarker=[];
-      for(p=0;p<engineerlatitude.length;p++){
-        engineermarker.push(L.circleMarker([engineerlatitude[p],engineerlongitude[p]],{
-          radius:"10",
-          color:"#C0392B",
-          stroke:false,
-          opacity:0.1,
-          fillcolor:"#C0392B",
-          weight:0.1,
-          fillopacity:0.1
-        }))};
-        L.layerGroup(engineermarker).addTo(myMap);
-       //Add analyst marker 
-        var analystlatitude=[];
-        var analystlongitude=[];
-        var analystcity=[];
-        for (i=0;i<data.length;i++){
-          for (j=0;j<codata.length;j++){
-            if (data[i].location.split(",")[0]===codata[j].city&&data[i].location.split(",")[1].charAt(1)===codata[j].state.charAt(0)&&data[i].position.includes("Analyst")){
-                  analystlatitude.push(codata[j].latitude)
-                  analystlongitude.push(codata[j].longitude)
-                  analystcity.push(data[i].location)           
-        }}}
-        var analystmarker=[];
-        for(h=0;h<analystlatitude.length;h++){
-          analystmarker.push(L.circleMarker([analystlatitude[h],analystlongitude[h]],{
-            radius:"10",
-            color:"#F1C40F",
-            stroke:false,
-            opacity:0.1,
-            fillcolor:"#F1C40F",
-            weight:0.1,
-            fillopacity:0.1
-          }))};
-          L.layerGroup(analystmarker).addTo(myMap);
-        // Add scientist marker
-        var scientistlatitude=[];
-        var scientistlongitude=[];
-        var scientistcity=[];
-        for (k=0;k<data.length;k++){
-          for (l=0;l<codata.length;l++){
-            if (data[k].location.split(",")[0]===codata[l].city&&data[k].location.split(",")[1].charAt(1)===codata[l].state.charAt(0)&&data[k].position.includes("Scientist")){
-                   scientistlatitude.push(codata[l].latitude)
-                   scientistlongitude.push(codata[l].longitude)
-                   scientistcity.push(data[k].location)    
-              }}}
-       var scientistmarker=[];
-        for(m=0;m<scientistlatitude.length;m++){
-          scientistmarker.push(L.circleMarker([scientistlatitude[m],scientistlongitude[m]],{
-            radius:"10",
-            color:"#3498DB",
-            stroke:false,
-            opacity:0.1,
-            fillcolor:"#3498DB",
-            weight:0.1,
-            fillopacity:0.1
-          }))};
-          L.layerGroup(scientistmarker).addTo(myMap);    
+        L.layerGroup(citymarker).addTo(myMap);   
         //Create legend to indicate the color of the circle marker
         var legend=L.control({position:"bottomright"});
         legend.onAdd=function(){
             var div=L.DomUtil.create("div","info legend");
-            var categories=["#85C1E9","#F4D03F","#F1948A","#D7BDE2","#A3E4D7","#ABB2B9"];
+            var categories=["#D7BDE2","#A3E4D7","#ABB2B9"];
             var labels=[];
             var legendInfo="<div class=\"labels\">"+"</div>";
             div.innerHTML=legendInfo;
            
                 labels.push(
-                "<li style=\"background-color:"+categories[0]+"\"></li>   "+"Distribution of Data Scientist (color deeper, company number larger)"+"<br>"
-                +"<li style=\"background-color:"+categories[1]+"\"></li>  "+"Distribution of Data Engineer (color deeper, company number larger)"+"<br>"
-                +"<li style=\"background-color:"+categories[2]+"\"></li>  "+"Distribution of Data Analyst (color deeper, company number larger)"+"<br>"
-                +"<li style=\"background-color:"+categories[3]+"\"></li>  "+"Data Company Average Rating -1--1 (circle larger, average salary higher)"+"<br>"
+                "<li style=\"background-color:"+categories[3]+"\"></li>  "+"Data Company Average Rating -1--1 (circle larger, average salary higher)"+"<br>"
                 +"<li style=\"background-color:"+categories[4]+"\"></li>  "+"Data Company Average Rating 2--3 (circle larger, average salary higher)"+"<br>"
                 +"<li style=\"background-color:"+categories[5]+"\"></li>  "+"Data Company Average Rating 4--5 (circle larger, average salary higher)"+"<br>"
                );           
@@ -215,6 +145,11 @@
             return div;
         };
         legend.addTo(myMap);
+    
+      
+
+
+    
     
    
 
