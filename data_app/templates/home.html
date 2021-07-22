@@ -5,7 +5,7 @@
 <section id="hero" class="d-flex align-items-center">
     <div class="container" data-aos="zoom-out" data-aos-delay="100">
       <h1>Welcome to <span>Data Science Jobs</span></h1>
-      <h2> We are a group of Data Analyat focused on assisting data scientists with their job search in the United States</h2>
+      <h2> We are a group of Data Analysts focused on assisting data scientists with their job search in the United States</h2>
       <div class="d-flex">
       </div>
     </div>
@@ -24,10 +24,10 @@
 
         <div class="row">
 
-          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
             <div class="member">
               <div class="member-img">
-                <img src="https://raw.githubusercontent.com/iyesogie/Project-2/main/images/IMG_8161.jpg" class="img-fluid" alt=">
+                <img src="https://raw.githubusercontent.com/iyesogie/Project-2/main/images/IMG_8161.jpg" class="img-fluid" alt="">
               </div>
               <div class="member-info">
                 <h4>Iyesogie Obakpolor</h4>
@@ -36,7 +36,7 @@
             </div>
           </div>
 
-          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
             <div class="member">
               <div class="member-img">
                 <img src="https://raw.githubusercontent.com/iyesogie/Project-2/main/images/Headshot.JPG" class="img-fluid" alt="">
@@ -48,7 +48,7 @@
             </div>
           </div>
 
-          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
             <div class="member">
               <div class="member-img">
                 <img src="https://raw.githubusercontent.com/iyesogie/Project-2/main/images/IMG_8851.jpg" class="img-fluid" alt="">
@@ -59,8 +59,10 @@
               </div>
             </div>
           </div>
-
-          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="400">
+        </div>
+        <div class="row">
+          <div class="col-lg-2"></div>
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="400">
             <div class="member">
               <div class="member-img">
                 <img src="https://raw.githubusercontent.com/iyesogie/Project-2/main/images/Jie%20Feng%20picture.jpg" class="img-fluid" alt="">
@@ -72,7 +74,7 @@
             </div>
           </div>
 
-          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="400">
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="400">
             <div class="member">
               <div class="member-img">
                 <img src="https://raw.githubusercontent.com/iyesogie/Project-2/main/images/1601360827973%20(4).jpeg" class="img-fluid" alt="">
@@ -83,7 +85,6 @@
               </div>
             </div>
           </div>
-
         </div>
 
       </div>
@@ -102,7 +103,6 @@
         <div class="row">
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
             <div class="icon-box">
-              <div class="icon"><i class="bx bxl-dribbble"></i></div>
               <h4><a href="{{ url_for('main.map') }}">Location and Salary</a></h4>
               <p>What is the relationship between Location and Salary?</p>
             </div>
@@ -110,38 +110,34 @@
 
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="300">
             <div class="icon-box">
-              <div class="icon"><i class="bx bx-tachometer"></i></div>
-              <h4><a href="{{ url_for('main.map') }}">Job Postings and Location</a></h4>
+              <h4><a href="{{ url_for('main.position') }}">Job Postings and Location</a></h4>
               <p>What is the relationship between the number of Job Postings and Location?</p>
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="100">
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="300">
             <div class="icon-box">
-              <div class="icon"><i class="bx bx-world"></i></div>
               <h4><a href="{{ url_for('main.size') }}"> Industry and Jop Postings</a></h4>
               <p>What is the relationship  between Industry and Jop Postings?</p>
             </div>
           </div>
-
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="200">
+        </div>
+        <div class="row">
+          <div class="col-lg-2"></div>
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="300">
             <div class="icon-box">
-              <div class="icon"><i class="bx bx-slideshow"></i></div>
               <h4><a href="{{ url_for('main.rating') }}">Company Ratings and Salary?</a></h4>
               <p>What is the relationship  between Company Ratings and Salary?</p>
             </div>
- 
-
-            <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="300">
-              <div class="icon-box">
-                <div class="icon"><i class="bx bx-file"></i></div>
-                <h4><a href="{{ url_for('main.company') }}">Availables <span>Jobs</span> </a></h4>
-                <p>Take a look at whats out there !!</p>
-              </div>
-
+          </div>
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="300">
+            <div class="icon-box">
+              <h4><a href="{{ url_for('main.company') }}">Availables <span>Jobs</span> </a></h4>
+              <p>Take a look at whats out there!</p>
             </div>
           </div>
-
+          </div>
+        </div>
         </div>
 
       </div>

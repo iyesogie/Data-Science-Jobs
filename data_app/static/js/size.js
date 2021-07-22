@@ -22,7 +22,13 @@ var trace1 = {
 // create data variable
 var data = [trace1];
 
+var layout = {
+  xaxis: {
+    tickangle: 30,
+    automargin: true
+  }
+}
 
 // create the bar plot
-Plotly.newPlot("bar-chart", data);
+Plotly.newPlot("bar-chart", data, layout);
 
