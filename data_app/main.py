@@ -45,7 +45,7 @@ def company():
 @main.route('/map')
 def map():
     data=dict()
-    data["page_name"] = "Available Salary/Ratings"
+    data["page_name"] = "Salary And Rating"
     ds_list = list(Datascientist_df.query.all())
     locations = [{
         "company" : row.Company,
@@ -78,7 +78,7 @@ def position():
     with open(file) as file:
         codata=json.load(file)
     data["codata"] = codata
-    return render_template('map.html',data=data)
+    return render_template('position.html',data=data)
 
 @main.route('/size')
 def size():

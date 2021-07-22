@@ -136,9 +136,9 @@
             div.innerHTML=legendInfo;
            
                 labels.push(
-                "<li style=\"background-color:"+categories[3]+"\"></li>  "+"Data Company Average Rating -1--1 (circle larger, average salary higher)"+"<br>"
-                +"<li style=\"background-color:"+categories[4]+"\"></li>  "+"Data Company Average Rating 2--3 (circle larger, average salary higher)"+"<br>"
-                +"<li style=\"background-color:"+categories[5]+"\"></li>  "+"Data Company Average Rating 4--5 (circle larger, average salary higher)"+"<br>"
+                "<li style=\"background-color:"+categories[0]+"\"></li>  "+"Data Company Average Rating -1--1 (circle larger, average salary higher)"+"<br>"
+                +"<li style=\"background-color:"+categories[1]+"\"></li>  "+"Data Company Average Rating 2--3 (circle larger, average salary higher)"+"<br>"
+                +"<li style=\"background-color:"+categories[2]+"\"></li>  "+"Data Company Average Rating 4--5 (circle larger, average salary higher)"+"<br>"
                );           
             
              div.innerHTML="<ul>"+labels.join("")+"</ul>";   
