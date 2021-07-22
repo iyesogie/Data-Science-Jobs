@@ -4,6 +4,8 @@
 from flask import Blueprint, render_template, request, redirect, url_for
 from . import db
 from .models import *
+import json
+import os
 
 main = Blueprint('main', __name__)
 
@@ -16,7 +18,7 @@ def index():
 def home():
     data = dict()
     data["page_name"] = "Home"
-    return render_template('home.html')
+    return render_template('home.html', data=data)
 
 @main.route('/company')
 def company():
@@ -53,6 +55,10 @@ def map():
         "salary":row.salary_estimate,
     } for row in ds_list]
     data["locations"] = locations
+    file=os.path.join("data_app","static","js","data","cities.json",)
+    with open(file) as file:
+        codata=json.load(file)
+    data["codata"] = codata
     return render_template('map.html',data=data)
 
 @main.route('/size')
