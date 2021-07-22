@@ -116,7 +116,7 @@
           scientistmarker=[];
           for(m=0;m<scientistlatitude.length;m++){
             scientistmarker.push(L.circleMarker([scientistlatitude[m],scientistlongitude[m]],{
-              radius:"10",
+              radius:"15",
               color:"blue",
               stroke:false,
               opacity:0.1,
@@ -154,9 +154,10 @@
                 div.innerHTML=legendInfo;
                
                     labels.push(
-                    "<li style=\"background-color:"+categories[0]+"\"></li>   "+"Distribution of Data Scientist (color deeper, company number larger)"+"<br>"
-                    +"<li style=\"background-color:"+categories[1]+"\"></li>  "+"Distribution of Data Analyst (color deeper, company number larger)"+"<br>"
-                    +"<li style=\"background-color:"+categories[2]+"\"></li>  "+"Distribution of Data Engineer (color deeper, company number larger)"+"<br>"
+                      "Deeper Colors Indicate Greater Density of Positions<br>"
+                    +"<li style=\"background-color:"+categories[0]+"\"></li>   "+"Data Scientist Position<br>"
+                    +"<li style=\"background-color:"+categories[1]+"\"></li>  "+"Data Analyst Position<br>"
+                    +"<li style=\"background-color:"+categories[2]+"\"></li>  "+"Data Engineer Position<br>"
                     
                    );           
                 

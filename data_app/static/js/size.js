@@ -23,6 +23,7 @@ var trace1 = {
 var data = [trace1];
 
 var layout = {
+  height:600,
   xaxis: {
     tickangle: 30,
     automargin: true
