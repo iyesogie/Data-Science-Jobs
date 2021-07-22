@@ -45,7 +45,26 @@ def company():
 @main.route('/map')
 def map():
     data=dict()
-    data["page_name"] = "Job Map"
+    data["page_name"] = "Available Salary/Ratings"
+    ds_list = list(Datascientist_df.query.all())
+    locations = [{
+        "company" : row.Company,
+        "rating" : row.Rating,
+        "location" : row.Location,
+        "position" : row.Position,
+        "salary":row.salary_estimate,
+    } for row in ds_list]
+    data["locations"] = locations
+    file=os.path.join("data_app","static","js","data","cities.json",)
+    with open(file) as file:
+        codata=json.load(file)
+    data["codata"] = codata
+    return render_template('map.html',data=data)
+
+@main.route('/position')
+def position():
+    data=dict()
+    data["page_name"] = "Available Positions"
     ds_list = list(Datascientist_df.query.all())
     locations = [{
         "company" : row.Company,
