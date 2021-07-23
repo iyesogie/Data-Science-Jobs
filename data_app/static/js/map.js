@@ -126,6 +126,127 @@
             }).bindPopup(result[q].city+"<hr>Data Company Number: "+dic2[q].count+"<br>Average Data Company Rating: "+ Math.round(result[q].rating/dic2[q].count)+"<br>Average Data Job Salary: $"+Math.round(salaryresult[q].salary/dic2[q].count)+"K"))
           }
         L.layerGroup(citymarker).addTo(myMap);   
+        engineerlatitude=[];
+        engineerlongitude=[];
+        engineercity=[];
+        for (n=0;n<data.length;n++){
+          for (o=0;o<codata.length;o++){
+            if (data[n].location.split(",")[0]===codata[o].city&&data[n].location.split(",")[1].charAt(1)===codata[o].state.charAt(0)&&data[n].position.includes("Engineer")){
+                   
+  
+                   engineerlatitude.push(codata[o].latitude)
+                   engineerlongitude.push(codata[o].longitude)
+                   engineercity.push(data[n].location)
+                   
+                    }}}
+       
+        engineermarker=[];
+        for(p=0;p<engineerlatitude.length;p++){
+          engineermarker.push(L.circleMarker([engineerlatitude[p],engineerlongitude[p]],{
+            radius:"10",
+            color:"red",
+            stroke:false,
+            opacity:0.1,
+            fillcolor:"red",
+            weight:0.1,
+            fillopacity:0.1
+          }).bindPopup(engineercity[p]))};
+          L.layerGroup(engineermarker).addTo(myMap);
+        analystlatitude=[];
+        analystlongitude=[];
+        analystcity=[];
+        for (i=0;i<data.length;i++){
+          for (j=0;j<codata.length;j++){
+        if (data[i].location.split(",")[0]===codata[j].city&&data[i].location.split(",")[1].charAt(1)===codata[j].state.charAt(0)&&data[i].position.includes("Analyst")){
+                   analystlatitude.push(codata[j].latitude)
+                   analystlongitude.push(codata[j].longitude)
+                   analystcity.push(data[i].location)
+                   
+        }}}
+       
+        analystmarker=[];
+        for(h=0;h<analystlatitude.length;h++){
+          analystmarker.push(L.circleMarker([analystlatitude[h],analystlongitude[h]],{
+            radius:"10",
+            color:"yellow",
+            stroke:false,
+            opacity:0.1,
+            fillcolor:"yellow",
+            weight:0.1,
+            fillopacity:0.1
+          }).bindPopup(analystcity[h]))};
+          L.layerGroup(analystmarker).addTo(myMap);
+  
+          scientistlatitude=[];
+          scientistlongitude=[];
+          scientistcity=[];
+          for (k=0;k<data.length;k++){
+            for (l=0;l<codata.length;l++){
+              if (data[k].location.split(",")[0]===codata[l].city&&data[k].location.split(",")[1].charAt(1)===codata[l].state.charAt(0)&&data[k].position.includes("Scientist")){
+                     scientistlatitude.push(codata[l].latitude)
+                     scientistlongitude.push(codata[l].longitude)
+                     scientistcity.push(data[k].location)
+                     
+                }}}
+         
+          scientistmarker=[];
+          for(m=0;m<scientistlatitude.length;m++){
+            scientistmarker.push(L.circleMarker([scientistlatitude[m],scientistlongitude[m]],{
+              radius:"15",
+              color:"blue",
+              stroke:false,
+              opacity:0.1,
+              fillcolor:"blue",
+              weight:0.1,
+              fillopacity:0.1
+            }).bindPopup(scientistcity[m]))};
+            L.layerGroup(scientistmarker).addTo(myMap);
+            analystcompany=[];
+            scientistcompany=[];
+            engineercompany=[];
+            othercompany=[];
+            for (z=0;z<data.length;z++){
+              if (data[z].position.includes("Analyst")){
+                analystcompany.push(data[z].company)
+              }
+              else if(data[z].position.includes("Scientist")){
+                scientistcompany.push(data[z].company)
+              }            
+              else if(data[z].position.includes("Engineer")){
+                engineercompany.push(data[z].company)
+  
+              }
+              else if(!data[z].position.includes("Analyst")&&!data[z].position.includes("Scientist")&&!data[z].position.includes("Engineer")){
+                othercompany.push(data[z].company
+                )}
+              
+            }
+            var legend=L.control({position:"bottomright"});
+            legend.onAdd=function(){
+                var div=L.DomUtil.create("div","info legend");
+                var categories=["#85C1E9","#F4D03F","#F1948A"];
+                var labels=[];
+                var legendInfo="<div class=\"labels\">"+"</div>";
+                div.innerHTML=legendInfo;
+               
+                    labels.push(
+                      "Deeper Colors Indicate Greater Density of Positions<br>"
+                    +"<li style=\"background-color:"+categories[0]+"\"></li>   "+"Data Scientist Position<br>"
+                    +"<li style=\"background-color:"+categories[1]+"\"></li>  "+"Data Analyst Position<br>"
+                    +"<li style=\"background-color:"+categories[2]+"\"></li>  "+"Data Engineer Position<br>"
+                    
+                   );           
+                
+                 div.innerHTML="<ul>"+labels.join("")+"</ul>";   
+                return div;
+            };
+            legend.addTo(myMap);
+      // Create legend to indicate the color of the circle marker
+     
+  
+  
+  
+      
         //Create legend to indicate the color of the circle marker
         var legend=L.control({position:"bottomright"});
         legend.onAdd=function(){
