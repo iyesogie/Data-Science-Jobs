@@ -1,7 +1,7 @@
 # THIS FILE CONTAINS ALL THE MAIN ROUTES
 #  We can change the routes and the functionality here
 
-from flask import Blueprint, render_template, request, redirect, url_for
+from flask import Blueprint, render_template, request, redirect, url_for, jsonify
 from . import db
 from .models import *
 import json
@@ -99,3 +99,18 @@ def rating():
     data=dict()
     data["page_name"] = "Rating vs. Salary"
     return render_template('rating_and_salary.html', data=data)
+
+@main.route('/searchpage')
+def searchpage():
+    data=dict()
+    data["page_name"] = "Server-Side Search"
+    return render_template('search.html', data=data)
+
+
+
+@main.route('/search', methods=['POST'])
+def substringQuery():
+    substring = request.form['substring']
+    qset = Company.query.filter(Company.name.contains(substring)).limit(10) #This is mongoengine ORM query
+    results = [company.name for company in qset]
+    return jsonify(results)
