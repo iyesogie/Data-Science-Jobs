@@ -55,7 +55,7 @@ def map():
         "salary":row.salary_estimate,
     } for row in ds_list]
     data["locations"] = locations
-    file=os.path.join("data_app","static","js","data","cities.json",)
+    file=os.path.join("data_app","static","data","cities.json",)
     with open(file) as file:
         codata=json.load(file)
     data["codata"] = codata
@@ -74,7 +74,7 @@ def position():
         "salary":row.salary_estimate,
     } for row in ds_list]
     data["locations"] = locations
-    file=os.path.join("data_app","static","js","data","cities.json",)
+    file=os.path.join("data_app","static","data","cities.json",)
     with open(file) as file:
         codata=json.load(file)
     data["codata"] = codata

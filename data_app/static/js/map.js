@@ -126,6 +126,7 @@
             }).bindPopup(result[q].city+"<hr>Data Company Number: "+dic2[q].count+"<br>Average Data Company Rating: "+ Math.round(result[q].rating/dic2[q].count)+"<br>Average Data Job Salary: $"+Math.round(salaryresult[q].salary/dic2[q].count)+"K"))
           }
         L.layerGroup(citymarker).addTo(myMap);   
+        
         //Create legend to indicate the color of the circle marker
         var legend=L.control({position:"bottomright"});
         legend.onAdd=function(){
