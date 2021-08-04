@@ -1,6 +1,7 @@
 # Project 2
  
-https://github.com/iyesogie/Data-Science-Jobs/blob/main/images/Data%20Science%20Jobs.png?raw=true![image](https://user-images.githubusercontent.com/79468835/128101055-881d2661-4111-456a-8832-0a988a70a7a6.png)
+![alt text](https://github.com/iyesogie/Data-Science-Jobs/blob/main/images/Data%20Science%20Jobs.png?raw=true![image](https://user-images.githubusercontent.com/79468835/128101220-b16c8c60-d2e1-4448-becb-842e8f4e612f.png)
+)
 
 ### Part 1 - Database Installation
 In order to set up the database on your local machine, you will need:  
